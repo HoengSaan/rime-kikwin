@@ -1,0 +1,125 @@
+﻿# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: kanas
+  name: シリトリ仮名
+  version: 0.10.1
+  author:
+    Original
+    - polyhedron <polyhedron@gmail.com>
+    - foodgen <chen.sst@gmail.com>
+    Shiritori Version
+    - zungsaan <zungsaan@gmail.com>
+  description: |
+    For typing Kana (かな/Japanese Syllabries)
+    Same as ordinary input method but you need to hold shift to type Katakana.
+    Send the email to zungsaan@gmail.com for issue report or suggesiton.
+    You can also pull request at github: github.com/HoengSaan/rime-kanas
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ かな, 英語 ]
+  - name: half_shape
+    states: [ 半角, 全角 ]
+    reset: 0
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    - uniquifier
+
+menu:
+  page_size: 1
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_'
+  delimiter: " '"
+  algebra:
+  algebra:
+    - derive/si/shi/
+    - derive/SI/SHI/
+    - derive/sy([aueo])/sh$1/
+    - derive/SY([AUEO])/SH$1/
+    - derive/^zi/ji/
+    - derive/^ZI/JI/
+    - derive/zzi/jji/
+    - derive/ZZI/JJI/
+    - derive/^zy([aueo])/j$1/
+    - derive/^ZY([AUEO])/J$1/
+    - derive/^zy([aueo])/jy$1/
+    - derive/^ZY([AUEO])/JY$1/
+    - derive/zzy([aueo])/jj$1/
+    - derive/ZZY([AUEO])/JJ$1/
+    - derive/zzy([aueo])/jjy$1/
+    - derive/ZZY([AUEO])/JJY$1/
+    - derive/tu/tsu/
+    - derive/TU/TSU/
+    - derive/du/dzu/
+    - derive/DU/DZU/
+    - derive/ti/chi/
+    - derive/TI/CHI/
+    - derive/tti/cchi/
+    - derive/TTI/CCHI/
+    - derive/ty([aueo])/ch$1/
+    - derive/TY([AUEO])/CH$1/
+    - derive/tty([aueo])/cch$1/
+    - derive/TTY([AUEO])/CCH$1/
+    - derive/^hu/fu/
+    - derive/^HU/FU/
+    - derive/hhu/ffu/
+    - derive/HHU/FFU/
+    - fuzz/^n$/m/
+    - fuzz/^N$/M/
+    - fuzz/^xtu$/t/
+    - fuzz/^XTU$/T/
+    - derive/^-$/_/
+
+translator:
+  dictionary: kanas
+  strict_spelling: true
+
+punctuator:
+  import_preset: default
+  full_shape: &symbols
+    '.': {commit: 。 }
+    ',': {commit: 、 }
+    '/': ・
+    '=': [ ゝ, ゞ ]
+    '+': [ ヽ, ヾ ]
+  half_shape: *symbols
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: minus, send: minus }
+    - { when: has_menu, accept: equal, send: equal }
+    - { when: paging, accept: comma, send: comma }
+    - { when: has_menu, accept: period, send: period }
+
+recognizer:
+  import_preset: default
+
+ascii_composer:
+  switch_key:
+    Caps_Lock: noop
+    Eisu_toggle: clear

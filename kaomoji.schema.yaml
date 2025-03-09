@@ -1,0 +1,31 @@
+﻿# Rime schema
+# encoding: utf-8
+#
+# kaomoji - 顏文字
+
+# 此爲菊韻和語輸入法方案文件
+# 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-kikwin
+# This is a schema file for Kikwin Japanese Input Method.
+# Learn how to use Kikwin in the readme file, available on the project's github page.
+
+__include: kikwin.schema:/
+
+schema:
+  schema_id: kaomoji
+  name:  顏文字
+  version: "1.0b"
+  author:
+    靈帝（Hoengsaan）
+
+  description: |
+    此方案可掛載於任何RIME方案之下 「t」可快速輸入促音
+    異點：減少無必要捨假名運用以便輸入，增添Microsoft IME自帶顏文字
+    詳細請至本方案github䈎。https://github.com/HoengSaan/rime-kikwin
+    如有問題或建議可於以上github䈎中開Issues反饋
+
+translator:
+  dictionary: kaomoji
+  speeling_hints: 50
+  enable_sentence: false
+  enable_user_dict: false

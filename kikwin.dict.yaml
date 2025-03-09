@@ -1,0 +1,24 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#
+# kikwin - 菊韻和語
+
+# 此爲菊韻和語輸入法字表詞庫文件
+# 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-kikwin
+# This is a dictionary file for Kikwin Japanese Input Method.
+# Learn how to use Kikwin in the readme file, available on the project's github page.
+
+---
+name: kikwin
+version: "1.0b"
+sort: original
+use_preset_vocabulary: false
+import_tables:
+  - kw_dicts/kikwin.maps
+  - kw_dicts/kikwin.reiseikoku
+  - kw_dicts/kikwin.jmdict
+  - kw_dicts/kikwin.kanjidic2
+  - kw_dicts/kikwin.mozc
+  - kw_dicts/kikwin.mozcemoji
+...

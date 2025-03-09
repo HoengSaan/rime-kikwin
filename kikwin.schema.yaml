@@ -1,0 +1,268 @@
+﻿# Rime schema
+# encoding: utf-8
+#
+# kikwin - 菊韻和語
+
+# 此爲菊韻和語輸入法方案文件
+# 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-kikwin
+# This is a schema file for Kikwin Japanese Input Method.
+# Learn how to use Kikwin in the readme file, available on the project's github page.
+
+schema:
+  schema_id: kikwin
+  name:  菊韻和語
+  version: "1.0b"
+  author:
+    靈帝（Hoengsaan）
+
+  description: |
+    測試階段
+    菊韻和語輸入法 「t」可快速輸入促音
+    詳細請至本方案github䈎。https://github.com/HoengSaan/rime-kikwin
+    如有問題或建議可於以上github䈎中開Issues反饋
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 粵文, 英文 ]
+  - name: full_shape
+    reset: 0
+    states: [ 半角, 全角 ]
+  - name: traditionalization
+    reset: 0
+    states: [ 新字, 舊字 ] 
+  - name: ascii_punct
+    reset: 0
+    states: [ 。，, ．， ]
+
+menu:
+  page_size: 9
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+    - affix_segmentor@kanas
+    - affix_segmentor@kaomoji
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+    - script_translator@kanas
+    - script_translator@kaomoji
+  translators:
+    - reverse_lookup_filter@special_typing
+    - simplifier@traditionalize
+    - punct_translator
+    - script_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-'
+  delimiter: " '"
+  algebra:
+    - derive/^([^&]+)&.+$/$1/
+    - xform/&//
+
+    - xform/いぇ|イェ/ye/
+    - xform/うぃ|ウィ/wi/
+    - xform/うぇ|ウェ/we/
+    - xform/ゔぁ|ヴァ/va/
+    - xform/ゔぃ|ヴィ/vi/
+    - xform/ゔぇ|ヴェ/ve/
+    - xform/ゔぉ|ヴォ/vo/
+    - xform/くぁ|クァ/qwa/
+    - xform/ぐぁ|グァ/gwa/
+    - xform/くぃ|クィ/qwi/
+    - xform/ぐぃ|グィ/gwi/
+    - xform/くぅ|クゥ/qwu/
+    - xform/ぐぅ|グゥ/gwu/
+    - xform/くぇ|クェ/qwe/
+    - xform/ぐぇ|グェ/gwe/
+    - xform/くぉ|グォ/qwo/
+    - xform/ぐぉ|グォ/gwo/
+    - xform/つぁ|ツァ/tsa/
+    - xform/づぁ|ヅァ/dza/
+    - xform/つぃ|ツィ/tsi/
+    - xform/づぃ|ヅィ/dzi/
+    - xform/つぇ|ツェ/tse/
+    - xform/づぇ|ヅェ/dze/
+    - xform/つぉ|ツォ/tso/
+    - xform/づぉ|ヅォ/dzo/
+    - xform/てゃ|テャ/tha/
+    - xform/でゃ|デャ/dha/
+    - xform/てぃ|ティ/thi/
+    - xform/でぃ|ディ/dhi/
+    - xform/てゅ|テュ/thu/
+    - xform/でゅ|デュ/dhu/
+    - xform/てぇ|テェ/the/
+    - xform/でぇ|デェ/dhe/
+    - xform/てょ|テョ/tho/
+    - xform/でょ|デョ/dho/
+    - xform/ふぁ|ファ/fa/
+    - xform/ふぃ|フィ/fi/
+    - xform/ふぇ|フェ/fe/
+    - xform/ふぉ|フォ/fo/
+
+    - xform/あ|ア/a/
+    - xform/い|イ/i/
+    - xform/う|ウ/u/
+    - xform/ゔ|ヴ/vu/
+    - xform/え|エ/e/
+    - xform/お|オ/o/
+    - xform/か|カ/ka/
+    - xform/が|ガ/ga/
+    - xform/き|キ/ki/
+    - xform/ぎ|ギ/gi/
+    - xform/く|ク/ku/
+    - xform/ぐ|グ/gu/
+    - xform/け|ケ/ke/
+    - xform/げ|ゲ/ge/
+    - xform/こ|コ/ko/
+    - xform/ご|ゴ/go/
+    - xform/さ|サ/sa/
+    - xform/ざ|ザ/za/
+    - xform/し|シ/si/
+    - xform/じ|ジ/zi/
+    - xform/す|ス/su/
+    - xform/ず|ズ/zu/
+    - xform/せ|セ/se/
+    - xform/ぜ|ゼ/ze/
+    - xform/そ|ソ/so/
+    - xform/ぞ|ゾ/zo/
+    - xform/た|タ/ta/
+    - xform/だ|ダ/da/
+    - xform/ち|チ/ti/
+    - xform/ぢ|ヂ/di/
+    - xform/つ|ツ/tu/
+    - xform/づ|ヅ/du/
+    - xform/て|テ/te/
+    - xform/で|デ/de/
+    - xform/と|ト/to/
+    - xform/ど|ド/do/
+    - xform/な|ナ/na/
+    - xform/に|ニ/ni/
+    - xform/ぬ|ヌ/nu/
+    - xform/ね|ネ/ne/
+    - xform/の|ノ/no/
+    - xform/は|ハ/ha/
+    - xform/ば|バ/ba/
+    - xform/ぱ|パ/pa/
+    - xform/ひ|ヒ/hi/
+    - xform/び|ビ/bi/
+    - xform/ぴ|ピ/pi/
+    - xform/ふ|フ/hu/
+    - xform/ぶ|ブ/bu/
+    - xform/ぷ|プ/pu/
+    - xform/へ|ヘ/he/
+    - xform/べ|ベ/be/
+    - xform/ぺ|ペ/pe/
+    - xform/ほ|ホ/ho/
+    - xform/ぼ|ボ/bo/
+    - xform/ぽ|ポ/po/
+    - xform/ま|マ/ma/
+    - xform/み|ミ/mi/
+    - xform/む|ム/mu/
+    - xform/め|メ/me/
+    - xform/も|モ/mo/
+    - xform/や|ヤ/ya/
+    - xform/ゆ|ユ/yu/
+    - xform/よ|ヨ/yo/
+    - xform/ら|ラ/ra/
+    - xform/り|リ/ri/
+    - xform/る|ル/ru/
+    - xform/れ|レ/re/
+    - xform/ろ|ロ/ro/
+    - xform/わ|ワ/wa/
+    - xform/ゐ|ヰ/wi/
+    - xform/ゑ|ヱ/we/
+    - xform/を|ヲ/wo/
+    - xform/ん|ン/n/
+    - xform/ー/-/
+
+    - xform/i(ゃ|ャ)/ya/
+    - xform/i(ゅ|ュ)/yu/
+    - xform/i(ょ|ョ)/yo/
+    
+    - xform/ぁ|ァ/xa/
+    - xform/ぃ|ィ/xi/
+    - xform/ぅ|ゥ/xu/
+    - xform/ぇ|ェ/xe/
+    - xform/ぉ|ォ/xo/
+    - xform/っ|ッ/xtu/
+    - xform/ゕ|ヵ/xka/
+    - xform/ゖ|ヶ/xke/
+    - xform/ゃ|ャ/xya/
+    - xform/ゅ|ュ/xyu/
+    - xform/ょ|ョ/xyo/
+    - xform/ゎ|ヮ/xwa/
+    
+    - xform/xtu([a-z])/$1$1/
+
+    - derive/x/l/
+    - derive/ku/qu/ 
+    - derive/qw/q/
+    - derive/qw/kw/
+    - derive/u/wu/
+    - derive/kk([auo])/cc$1/
+    - derive/k([auo])/c$1/
+    - derive/ss([ie])/cc$1/
+    - derive/s([ie])/c$1/
+    - derive/si/shi/
+    - derive/sy([aueo])/sh$1/
+    - derive/zi/ji/
+    - derive/zzi/jji/
+    - derive/zy([aueo])/j$1/
+    - derive/zy([aueo])/jy$1/
+    - derive/zzy([aueo])/jj$1/
+    - derive/zzy([aueo])/jjy$1/
+    - derive/tu/tsu/
+    - derive/du/dzu/
+    - derive/ti/chi/
+    - derive/ty([aueo])/ch$1/
+    - derive/tty([aueo])/cch$1/
+    - derive/hu/fu/
+    - derive/hhu/ffu/
+    - fuzz/^xtu$/t/ 
+    - derive/^-$/_/
+
+translator:
+  dictionary: kikwin
+  speeling_hints: 20
+  enable_sentence: false
+  enable_user_dict: false
+
+punctuator:
+  import_preset: symbols-gukwan
+
+traditionalize:
+  option_name: traditionalization
+  opencc_config: jp2t.json
+  tips: none
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: minus, send: minus }
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: "^/([0-9]0?|[a-z]+)$"
+    kanas: "^G[a-zA-Z-]*;?$"
+    kaomoji: "^K[a-z-]*;?$"
+
+ascii_composer:
+  switch_key:
+    Caps_Lock: noop
+    Eisu_toggle: clear
