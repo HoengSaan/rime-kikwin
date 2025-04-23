@@ -12,11 +12,11 @@
 schema:
   schema_id: kikwin
   name:  菊韻和語
-  version: "1.0b"
+  version: "1.2b"
   author:
-    靈帝（Hoengsaan）
+    - 靈帝（Hoengsaan）
 
-  description: |
+  description: |-
     測試階段
     菊韻和語輸入法 「t」可快速輸入促音
     詳細請至本方案github䈎。https://github.com/HoengSaan/rime-kikwin
@@ -35,9 +35,6 @@ switches:
   - name: ascii_punct
     reset: 0
     states: [ 。，, ．， ]
-
-menu:
-  page_size: 9
 
 engine:
   processors:
@@ -238,9 +235,9 @@ speller:
 
 translator:
   dictionary: kikwin
-  speeling_hints: 20
-  enable_sentence: false
-  enable_user_dict: false
+  speeling_hints: 10
+  comment_format:
+    - xform/&//
 
 punctuator:
   import_preset: symbols-gukwan

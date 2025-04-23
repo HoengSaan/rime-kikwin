@@ -1,7 +1,7 @@
 ﻿# Rime dictionary
 # encoding: utf-8
 #
-# kikwin.reiseikoku - 令制國
+# kikwin.ryouseikoku - 令制國
 
 # 此爲菊韻和語輸入法字表詞庫文件
 # 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
@@ -10,7 +10,7 @@
 # Learn how to use Kikwin in the readme file, available on the project's github page.
 
 ---
-name: kikwin.reiseikoku
+name: kikwin.ryouseikoku
 version: "13.4b"
 sort: by_weight
 use_preset_vocabulary: false

@@ -13,6 +13,8 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
+本人雖已有想法，實際嘗試後，發現中州韻本身設計不利於日語輸入法，尤其是日語文法特徵。例如活用，中州韻需超巨大詞庫去，效率不符合實際使用。或許lua亦能實現類似功能，但本人認爲不如直接使用原生日語輸入法。故菊韻和語不再更新，亦不需要更新已可達成其元本功能，即使用菊韻時輔助性輸入日語。
+
 ## Introduction
 
 **Kikwin** (菊韻, きくゐん) is a Japanese input method based on RIME. The major different between other Japanese scheme is the dictionary file use Kana instead of romaji, which significanlly lower the size of the file.
@@ -29,6 +31,8 @@ The following file is converted from [lazyfoxchan/rime-jaroomaji: Japanese rōma
 - `kikwin.mozcemoji`
 
 `kikwin.map` is based on Geospatial Information Authority of Japan's [地名集日本 (GAZETTEER OF JAPAN)](https://www.gsi.go.jp/kihonjohochousa/gazetteer.html)
+
+Update: Added [rime-kunyomi](https://github.com/sgalal/rime-kunyomi/tree/master) dictionary, license unknown.
 
 ## はじめに
 
@@ -47,7 +51,7 @@ Kikwinはもともと、Gukwan（菊韻、広東語入力法）を使用しな�
 
 `kikwin.maps`の底本は国土地理院の[地名集日本 (GAZETTEER OF JAPAN)](https://www.gsi.go.jp/kihonjohochousa/gazetteer.html)。
 
-
+アップデート：[rime-kunyomi](https://github.com/sgalal/rime-kunyomi/tree/master)辞書ファイル追加，ライセンス不明。
 
 ## 簡介
 
@@ -64,3 +68,4 @@ Kikwinはもともと、Gukwan（菊韻、広東語入力法）を使用しな�
 
 `kikwin.maps`底本爲國土地理院[地名集日本 (GAZETTEER OF JAPAN)](https://www.gsi.go.jp/kihonjohochousa/gazetteer.html)。
 
+更新：增加[rime-kunyomi](https://github.com/sgalal/rime-kunyomi/tree/master)詞庫，許可證不明。

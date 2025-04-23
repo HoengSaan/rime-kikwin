@@ -11,14 +11,15 @@
 
 ---
 name: kikwin
-version: "1.0b"
+version: "1.2b"
 sort: original
 use_preset_vocabulary: false
 import_tables:
   - kw_dicts/kikwin.maps
-  - kw_dicts/kikwin.reiseikoku
+  - kw_dicts/kikwin.ryouseikoku
   - kw_dicts/kikwin.jmdict
   - kw_dicts/kikwin.kanjidic2
   - kw_dicts/kikwin.mozc
   - kw_dicts/kikwin.mozcemoji
+  - kunyomi
 ...
