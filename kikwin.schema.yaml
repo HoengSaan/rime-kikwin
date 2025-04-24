@@ -25,7 +25,7 @@ schema:
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ 粵文, 英文 ]
+    states: [ 和文, 英文 ]
   - name: full_shape
     reset: 0
     states: [ 半角, 全角 ]
@@ -58,10 +58,10 @@ engine:
     - script_translator@kaomoji
   translators:
     - reverse_lookup_filter@special_typing
-    - simplifier@traditionalize
     - punct_translator
     - script_translator
   filters:
+    - simplifier@traditionalize
     - uniquifier
 
 speller:
