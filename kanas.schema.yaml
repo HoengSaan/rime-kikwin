@@ -5,18 +5,18 @@
 schema:
   schema_id: kanas
   name: シリトリ仮名
-  version: 0.10.1
+  version: 1.3b
   author:
-    Original
+    - Original：
     - polyhedron <polyhedron@gmail.com>
     - foodgen <chen.sst@gmail.com>
-    Shiritori Version
+    - Shiritori Version：
     - zungsaan <zungsaan@gmail.com>
   description: |
     For typing Kana (かな/Japanese Syllabries)
     Same as ordinary input method but you need to hold shift to type Katakana.
     Send the email to zungsaan@gmail.com for issue report or suggesiton.
-    You can also pull request at github: github.com/HoengSaan/rime-kanas
+    You can also pull request at github: github.com/HoengSaan/rime-kikwin
 
 switches:
   - name: ascii_mode

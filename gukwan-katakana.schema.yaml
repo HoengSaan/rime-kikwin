@@ -1,0 +1,47 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+__include: kanas.schema:/
+
+schema:
+  schema_id: gukwan-katakana
+  name: KATAKANA for Gukwan
+  version: "1.3b"
+  author:
+    - Original：
+    - polyhedron <polyhedron@gmail.com>
+    - foodgen <chen.sst@gmail.com>
+    - Shiritori Version：
+    - zungsaan <zungsaan@gmail.com>
+  description: |
+    KATAKANA for Trime Theme "菊韻" (Gukwan)
+    Schema Repo: github.com/HoengSaan/rime-kikwin
+    Theme Repo: github.com/HoengSaan/rime-gukwan
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-_'
+  delimiter: " '"
+  algebra:
+    - derive/si/shi/
+    - derive/sy([aueo])/sh$1/
+    - derive/zzi/jji/
+    - derive/^zy([aueo])/j$1/
+    - derive/^zy([aueo])/jy$1/
+    - derive/zzy([aueo])/jj$1/
+    - derive/zzy([aueo])/jjy$1/
+    - derive/tu/tsu/
+    - derive/du/dzu/
+    - derive/ti/chi/
+    - derive/tti/cchi/
+    - derive/ty([aueo])/ch$1/
+    - derive/tty([aueo])/cch$1/
+    - derive/^hu/fu/
+    - derive/hhu/ffu/
+    - fuzz/^n$/m/
+    - fuzz/^xtu$/t/
+    - derive/^-$/_/
+
+translator:
+  __include: kanas.schema:/translator
+  dictionary: gukwan-katakana
