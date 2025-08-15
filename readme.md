@@ -13,9 +13,13 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-本人雖已有想法，但實際嘗試後，發現中州韻（Rime）本身設計竝不利於日語輸入法，尤其是日語文法特徵。例如活用，中州韻需超巨大詞庫去，效率不符合實際使用。（電腦或許可以成功部署，但我不認爲多數電話能夠成功部署一個1GB詞庫）或許lua亦能實現類似功能，但本人認爲不如直接使用原生日語輸入法。故菊韻和語或不再更新，亦不需要更新已可達成其元本功能，即使用菊韻時輔助性輸入日語。
+菊韻和語同其他主要基於mozc項目，使用音碼輸入日語之中州韻方案（Rime Scheme）有共同缺點，**難用**。此類方案打字體驗基本上只能滿足最基本日語打字需求，打字體驗甚至可能不如20年前ATOK、WX系列等輸入法（儘管此類輸入法並非無償）。
 
-故所有中州韻日語方案打字體驗基本上只能滿足最基本日語打字需求，打字體驗甚至可能不如20年前ATOK、WX系列等輸入法（儘管此類輸入法並非無償）。
+本人雖已有想法，但實際嘗試後，發現中州韻本身設計竝不利於日語輸入法，尤其是日語文法特徵。例如用言活用，中州韻需超巨大詞庫去，效率不符合實際使用。（電腦或許可以成功部署，但所需時間或遠超想像。或許lua亦能實現類似功能，但本人認爲最終結果不如直接使用原生日語輸入法。故菊韻和語或不再更新，亦不需要更新已可達成其元本功能，即使用菊韻時輔助性輸入日語。
+
+This project will not receive any update, probably. For details, see the Chinese announcement above.
+
+このプロジェクトはおそらく更新されません。詳細は上記の中国語でのお知らせをご覧ください。
 
 ## Introduction
 
@@ -44,7 +48,7 @@ Kikwinはもともと、Gukwan（菊韻、広東語入力法）を使用しな�
 
 **Kaomoji**は顔文字を入力するためのもので、Kikwinで顔文字を入力する場合は`K`を押してください。辞書ファイルは[mtripg6666tdr/Kaomoji_proj](mtripg6666tdr/Kaomoji_proj)に基づいており、変換元のライセンスに従います。
 
-以下のファイルは、[lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME](lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME) から変換されたものであり、変換元のライセンスに従います。各ファイルのコメントで詳細を確認してください。
+以下のファイルは、[lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME](https://github.com/lazyfoxchan/rime-jaroomaji/) から変換されたものであり、変換元のライセンスに従います。各ファイルのコメントで詳細を確認してください。
 
 - `kikwin.jmdict`
 - `kikwin.kanjidic2`
@@ -61,7 +65,7 @@ Kikwinはもともと、Gukwan（菊韻、広東語入力法）を使用しな�
 
 本方案本用作使用菊韻粵語方案時，免除切換日文輸入法麻煩而作。詳細：[HoengSaan/rime-gukwan](https://github.com/HoengSaan/rime-gukwan/) 。
 
-以下文件從[lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME](lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME)自動轉換，遵守源文件之許可。詳細請見各文件備註。
+以下文件從[lazyfoxchan/rime-jaroomaji: Japanese rōmaji input schema for Rime IME](https://github.com/lazyfoxchan/rime-jaroomaji/)自動轉換，遵守源文件之許可。詳細請見各文件備註。
 
 - `kikwin.jmdict`
 - `kikwin.kanjidic2`
